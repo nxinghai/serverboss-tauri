@@ -1,0 +1,138 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "build": {
+    "beforeBuildCommand": "",
+    "beforeDevCommand": "",
+    "devPath": "../ui",
+    "distDir": "../ui",
+    "withGlobalTauri": true
+  },
+  "package": {
+    "productName": "ServerBoss",
+    "version": "1.0.1"
+  },
+  "tauri": {
+    "allowlist": {
+      "shell": {
+        "all": true,
+        "execute": true,
+        "open": true,
+        "scope": [
+          {
+            "name": "cmd",
+            "cmd": "cmd",
+            "args": true
+          },
+          {
+            "name": "kill",
+            "cmd": "kill",
+            "args": true
+          },
+          {
+            "name": "./java",
+            "cmd": "./java",
+            "args": true
+          }
+        ],
+        "sidecar": true
+      },
+      "dialog": {
+        "all": true
+      },
+      "http": {
+        "all": true
+      },
+      "fs": {
+        "all": true,
+        "scope": [
+          "$RESOURCE/**",
+          "$LOCALDATA/**"
+        ]
+      },
+      "path": {
+        "all": true
+      },
+      "window": {
+        "all": true
+      }
+    },
+    "bundle": {
+      "active": true,
+      "category": "DeveloperTool",
+      "copyright": "",
+      "deb": {
+        "depends": []
+      },
+      "externalBin": [],
+      "icon": [
+        "myicons/16x16.jpg",
+        "myicons/16x16@2x.jpg",
+        "myicons/32x32.jpg",
+        "myicons/32x32@2x.jpg",
+        "myicons/128x128.jpg",
+        "myicons/128x128@2x.jpg",
+        "myicons/256x256.jpg",
+        "myicons/256x256@2x.jpg",
+        "myicons/512x512.jpg",
+        "myicons/512x512@2x.jpg",
+        "myicons/icon.ico",
+        "myicons/macos.icns"
+      ],
+      "identifier": "com.xh.serverboss",
+      "longDescription": "",
+      "macOS": {
+        "entitlements": null,
+        "exceptionDomain": "",
+        "frameworks": [],
+        "providerShortName": null,
+        "signingIdentity": null
+      },
+      "resources": [
+        "jre",
+        "dbs",
+        "jar"
+      ],
+      "shortDescription": "",
+      "targets":  [
+        "appimage",
+        "dmg",
+        "msi"
+      ],
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": "",
+        "webviewInstallMode": {
+          "type": "embedBootstrapper"
+        },
+        "wix": {
+          "language": "zh-CN"
+        }
+      }
+    },
+    "security": {
+      "csp": null
+    },
+    "updater": {
+      "active": false,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEVEMDdCNEZDODY1QzFFQUIKUldTckhseUcvTFFIN1Fwbk0vQU1jdWZkOVo5TXJYYTZvVFNpMGo2dnRIV0NlR0FTYThvYjhqYVMK",
+      "dialog": true,
+      "windows": {
+        "installMode": "basicUi"
+      },
+      "endpoints": [
+        "https://localhost:44300/update/{{target}}/{{arch}}/{{current_version}}"
+      ]
+    },
+    "windows": [
+      {
+        "center": true,
+        "resizable": true,
+        "title": "ServerBoss",
+        "height": 768,
+        "width": 1366,
+        "theme": "Light"
+      }
+    ]
+  }
+}
